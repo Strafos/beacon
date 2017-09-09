@@ -57,7 +57,7 @@ def findLocation(body, locationFlag):
         cursor -= 1
 
     if cursor < 0:
-        return None
+        return locationFlag
 
     return " ".join(words[cursor:index + len(cleaned_location_flags)])
 
