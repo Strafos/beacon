@@ -6,11 +6,15 @@ import re
 def findLocationFlag(convertedJson):
     loc = ""
     sal = 0
+    haslocation = False
     for entity in convertedJson["entities"]:
         if entity["type"] == "LOCATION":
+            haslocation = True
             if entity["salience"] > sal:
                 loc = entity["name"]
                 sal = entity["salience"]
+
+    if not haslocation: return None
     return loc
 
 def findInList(word_list, target):
@@ -62,5 +66,6 @@ def find_Loc(analyzed_tweet, original_tweet):
     # tweet = "Water rising quick please help ASAP please!!\n820 smith street, port Arthur Texas,77640"
     print("tweet: \n\t" + tweet)
     print()
-    print("determined location: \n\t" + findLocation(tweet, locationFlag))
+    if locationFlag != None:
+        print("determined location: \n\t" + findLocation(tweet, locationFlag))
     #now words[index] is a number, the 45 in 45 oak avenue mercer county
