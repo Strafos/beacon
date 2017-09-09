@@ -79,4 +79,4 @@ def find_Loc(analyzed_tweet, original_tweet):
         print("determined location: " + findLocation(tweet, locationFlag))
     #now words[index] is a number, the 45 in 45 oak avenue mercer county
 
-# print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
+print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
