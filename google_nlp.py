@@ -40,4 +40,6 @@ for line in file.readlines():
     # print(line)
     address = nlp.find_Loc(analyzed_tweet, line)
     coordinates = geolocate(nlp.find_Loc(analyzed_tweet, line))
-    new_entry = Entry(coordinates[0], coordinates[1], address)
+    new_entry = None
+    if coordinates is not None:
+        new_entry = Entry(coordinates[0], coordinates[1], address)
