@@ -53,8 +53,11 @@ def findLocation(body, locationFlag):
         return words[index]
 
     cursor = index
-    while cursor > 0 and not words[cursor].isdigit():
+    while cursor >= 0 and not words[cursor].isdigit():
         cursor -= 1
+
+    if cursor < 0:
+        return locationFlag
 
     return " ".join(words[cursor:index + len(cleaned_location_flags)])
 
