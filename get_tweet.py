@@ -4,5 +4,6 @@ file = open('tweets.txt', 'r')
 for i in file.readlines():
     # print(i)
     a = json.loads(i)
-    print(a["user"])
+    print(a)
+    # print(a["user"])
     break

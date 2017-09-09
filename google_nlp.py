@@ -1,5 +1,6 @@
 import googleapiclient.discovery
 
+from geolocate import geolocate
 import argparse
 import json
 import sys
@@ -34,4 +35,6 @@ file = open('tweets2.txt', 'r')
 for line in file.readlines():
     result = analyze_entities(line, get_native_encoding_type())
     analyzed_tweet = json.dumps(result, indent=2)
-    nlp.find_Loc(analyzed_tweet, line)
+    # print(analyzed_tweet)
+    # print(line)
+    geolocate(nlp.find_Loc(analyzed_tweet, line))

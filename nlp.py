@@ -66,17 +66,18 @@ def find_Loc(analyzed_tweet, original_tweet):
     # with open("info.json") as f:
     #     convertedJson = json.load(f)
     convertedJson = json.loads(analyzed_tweet)
+    # print(convertedJson)
     # convertedJson = json
 
 
     locationFlag = findLocationFlag(convertedJson)
 
     tweet = original_tweet
-    # tweet = "Water rising quick please help ASAP please!!\n820 smith street, port Arthur Texas,77640"
-    # print("tweet: \n\t" + tweet)
-    # print()
-    if locationFlag != None:
-        print("determined location: " + findLocation(tweet, locationFlag))
-    #now words[index] is a number, the 45 in 45 oak avenue mercer county
+    # if locationFlag != None:
+    #     print("determined location: " + findLocation(tweet, locationFlag))
+    if locationFlag is not None:
+        return findLocation(tweet,locationFlag)
+    else:
+        return None
 
 # print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
