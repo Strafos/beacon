@@ -5,6 +5,7 @@ from tweepy import Stream
 from constants import *
 import json
 
+#looking into streams
 class StdOutListener(StreamListener):
     """ A listener handles tweets that are received from the stream.
     This is a basic listener that just prints received tweets to stdout.
