@@ -18,7 +18,6 @@ def findLocationFlag(convertedJson):
     # if not haslocation or sal <= .1:
     if not haslocation:
         return None
-    print(loc)
     return loc
 
 def findInList(word_list, target):

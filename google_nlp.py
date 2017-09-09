@@ -31,13 +31,13 @@ def get_native_encoding_type():
     else:
         return 'UTF32'
 
-file = open('tweets2.txt', 'r')
+file = open('testtweet.txt', 'r')
 
 for line in file.readlines():
     result = analyze_entities(line, get_native_encoding_type())
     analyzed_tweet = json.dumps(result, indent=2)
-    # print(analyzed_tweet)
-    # print(line)
+    print(analyzed_tweet)
+    print(line)
     address = nlp.find_Loc(analyzed_tweet, line)
     coordinates = geolocate(nlp.find_Loc(analyzed_tweet, line))
     new_entry = None

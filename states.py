@@ -59,4 +59,6 @@ states = [
     'Washington',
     'Wisconsin',
     'Wyoming',
-    'house']
+    'house',
+    'home'
+    ]
