@@ -39,7 +39,7 @@ def findLocation(body, locationFlag):
         words.append(word.strip("#.!"))
 
     cleaned_location_flags = []
-    for flag in locationFlag:
+    for flag in locationFlag.split():
         cleaned_location_flags.append(flag.strip(("#.!,&^%$*")))
 
     index = findInList(words, cleaned_location_flags)
@@ -73,4 +73,4 @@ def find_Loc(analyzed_tweet, original_tweet):
         print("determined location: \n\t" + findLocation(tweet, locationFlag))
     #now words[index] is a number, the 45 in 45 oak avenue mercer county
 
-print(findLocation("Pray for 38 bean way #Mexico", ["#Mexico"]))
+# print(findLocation("Pray for 38 bean way #Mexico Ecuador", "Mexico #Ecuador"))
