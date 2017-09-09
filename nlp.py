@@ -24,11 +24,10 @@ def findInList(word_list, target):
     length = len(target)
 
     for t in target:
-        if not t in word_list[index:index + length]:
+        if not t.strip("#.!") in word_list[index:index + length]:
             return -1
 
     return index
-
 
 def findLocation(body, locationFlag):
 
