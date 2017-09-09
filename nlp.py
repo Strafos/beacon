@@ -10,14 +10,15 @@ def findLocationFlag(convertedJson):
     sal = 0
     haslocation = False
     for entity in convertedJson["entities"]:
-        if entity["type"] == "LOCATION" and entity["name"] not in states.states.values():
+        if entity["type"] == "LOCATION" and entity["name"] not in states.states:
             haslocation = True
             if entity["salience"] > sal:
                 loc = entity["name"]
                 sal = entity["salience"]
-    if not haslocation or sal <= .1:
+    # if not haslocation or sal <= .1:
+    if not haslocation:
         return None
-    # print(loc)
+    print(loc)
     return loc
 
 def findInList(word_list, target):
