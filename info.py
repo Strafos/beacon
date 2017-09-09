@@ -62,3 +62,7 @@ states = [
     'house',
     'home'
     ]
+
+nums = list(range(10))
+
+help_words = ['help','!','family','stuck','trapped',]

@@ -8,21 +8,7 @@ from tweepy import Stream
 from constants import *
 import json
 import time
-
-nums = {
-    '0': '0',
-    '1': '1',
-    '2': '2',
-    '3': '3',
-    '4': '4',
-    '6': '6',
-    '7': '7',
-    '5': '5',
-    '8': '8',
-    '9': '9',
-}
-
-help_words = ['help','!','family','stuck','trapped',]
+import info
 
 tweets = open('tweets3.txt', 'w')
 
@@ -32,20 +18,20 @@ class StdOutListener(StreamListener):
     """
     def on_data(self, data):
         a = json.loads(data)
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(a)
+        # pp = pprint.PrettyPrinter(indent=4)
+        # pp.pprint(a)
         tweet = a['text']
         idx = 0
         if 'RT @' in tweet:
             idx = data.index(':') + 1
-        for num in nums.values():
+        for num in info.nums:
             if num in tweet:
-                for kw in help_words:
+                for kw in info.help_words:
                     if kw in tweet: 
-                        print(tweet)
+                        # print(tweet)
                         tweets.write(tweet)
                         return True
-        return False
+        return True
 
     def on_error(self, status):
         print(status)
