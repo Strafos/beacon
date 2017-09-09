@@ -80,4 +80,4 @@ def find_Loc(analyzed_tweet, original_tweet):
     else:
         return None
 
-# print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
+print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
