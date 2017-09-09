@@ -1,63 +1,57 @@
 {
   "entities": [
     {
-      "name": "Michelangelo Caravaggio",
-      "type": "PERSON",
-      "metadata": {
-        "mid": "/m/020bg",
-        "wikipedia_url": "https://en.wikipedia.org/wiki/Caravaggio"
-      },
-      "salience": 0.8303663,
+      "name": "Water",
+      "type": "OTHER",
+      "metadata": {},
+      "salience": 0.66641265,
       "mentions": [
         {
           "text": {
-            "content": "Michelangelo Caravaggio",
+            "content": "Water",
             "beginOffset": 0
-          },
-          "type": "PROPER"
-        },
-        {
-          "text": {
-            "content": "painter",
-            "beginOffset": 33
           },
           "type": "COMMON"
         }
       ]
     },
     {
-      "name": "Italian",
+      "name": "Arthur Texas",
       "type": "LOCATION",
       "metadata": {
-        "mid": "/m/03rjj",
-        "wikipedia_url": "https://en.wikipedia.org/wiki/Italy"
+        "mid": "/m/013mzh",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Port_Arthur,_Texas"
       },
-      "salience": 0.1387151,
+      "salience": 0.22902292,
       "mentions": [
         {
           "text": {
-            "content": "Italian",
-            "beginOffset": 25
+            "content": "Arthur Texas",
+            "beginOffset": 74
           },
           "type": "PROPER"
+        },
+        {
+          "text": {
+            "content": "port",
+            "beginOffset": 69
+          },
+          "type": "COMMON"
         }
       ]
     },
     {
-      "name": "The Calling of Saint Matthew",
-      "type": "EVENT",
-      "metadata": {
-        "mid": "/m/085_p7",
-        "wikipedia_url": "https://en.wikipedia.org/wiki/The_Calling_of_St_Matthew_(Caravaggio)"
-      },
-      "salience": 0.030918568,
+      "name": "street",
+      "type": "LOCATION",
+      "metadata": {},
+      "salience": 0.104564436,
       "mentions": [
         {
           "text": {
-            "content": "The Calling of Saint Matthew",
-            "beginOffset": 68
+            "content": "street",
+            "beginOffset": 61
           },
-          "type": "PROPER"
+          "type": "COMMON"
         }
       ]
     }
