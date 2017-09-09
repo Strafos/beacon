@@ -55,5 +55,8 @@ states = {
         'WA': 'Washington',
         'WI': 'Wisconsin',
         'WV': 'West Virginia',
-        'WY': 'Wyoming'
+        'WY': 'Wyoming',
+        'A': 'Cuba',
+        'B': 'US',
+        'WV': 'Caribbean',
 }

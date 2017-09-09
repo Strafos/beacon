@@ -8,6 +8,21 @@ from constants import *
 import json
 import time
 
+nums = {
+    '0': '0',
+    '1': '1',
+    '2': '2',
+    '3': '3',
+    '4': '4',
+    '6': '6',
+    '7': '7',
+    '5': '5',
+    '8': '8',
+    '9': '9',
+}
+
+help_words = ['help','!','family','stuck','trapped',]
+
 tweets = open('tweets1.txt', 'w')
 
 class StdOutListener(StreamListener):
@@ -18,8 +33,18 @@ class StdOutListener(StreamListener):
         a = data.index('"text":')
         b = data.index('"source"')
         # time.sleep(.1)
-        print(data[a+7:b-1])
-        tweets.write(data[a+7:b-1] + '\n')
+        tweet = data[a+7:b-1]
+        idx = 0
+        if 'RT @' in tweet:
+            idx = data.index(':') + 1
+        for num in nums.values():
+            if num in tweet:
+                for kw in help_words:
+                    if kw in tweet: 
+                        print(tweet)
+                        print(data)
+                        tweets.write(data[a+7:b-1] + '\n')
+                        return True
         return True
 
     def on_error(self, status):
@@ -31,5 +56,4 @@ if __name__ == '__main__':
     auth.set_access_token(access_token, access_token_secret)
 
     stream = Stream(auth, l)
-    # stream.filter(track=['#Hurricaneirma', '#Irma', '#Irmarescue', '#SOSharvey', '#harveyrescue'])
-    stream.filter(track=['#SOSharvey', '#harveyrescue'])
+    stream.filter(track=['#Hurricaneirma', '#Irma', '#Irmarescue', '#SOSharvey', '#harveyrescue'])
