@@ -35,16 +35,17 @@ class StdOutListener(StreamListener):
         # time.sleep(.1)
         tweet = data[a+7:b-1]
         idx = 0
-        if 'RT @' in tweet:
-            idx = data.index(':') + 1
-        for num in nums.values():
-            if num in tweet:
-                for kw in help_words:
-                    if kw in tweet: 
-                        print(tweet)
-                        print(data)
-                        tweets.write(data[a+7:b-1] + '\n')
-                        return True
+        tweets.write(data)
+        # if 'RT @' in tweet:
+        #     idx = data.index(':') + 1
+        # for num in nums.values():
+        #     if num in tweet:
+        #         for kw in help_words:
+        #             if kw in tweet: 
+        #                 print(tweet)
+        #                 print(data)
+        #                 tweets.write(data[a+7:b-1] + '\n')
+        #                 return True
         return True
 
     def on_error(self, status):
