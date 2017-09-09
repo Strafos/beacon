@@ -24,7 +24,7 @@ def findInList(word_list, target):
     length = len(target)
 
     for t in target:
-        if not t.strip("#.!") in word_list[index:index + length]:
+        if not t in word_list[index:index + length]:
             return -1
 
     return index
@@ -38,7 +38,11 @@ def findLocation(body, locationFlag):
     for word in body_split:
         words.append(word.strip("#.!"))
 
-    index = findInList(words, locationFlag.split())
+    cleaned_location_flags = []
+    for flag in locationFlag:
+        cleaned_location_flags.append(flag.strip(("#.!,&^%$*")))
+
+    index = findInList(words, cleaned_location_flags)
 
     if index >= len(body) or index < 0:
         return
@@ -49,7 +53,7 @@ def findLocation(body, locationFlag):
     while cursor > 0 and not words[cursor].isdigit():
         cursor -= 1
 
-    return " ".join(words[cursor:index + len(locationFlag.split())])
+    return " ".join(words[cursor:index + len(cleaned_location_flags)])
 
 def find_Loc(analyzed_tweet, original_tweet):
     convertedJson = dict()
@@ -68,3 +72,5 @@ def find_Loc(analyzed_tweet, original_tweet):
     if locationFlag != None:
         print("determined location: \n\t" + findLocation(tweet, locationFlag))
     #now words[index] is a number, the 45 in 45 oak avenue mercer county
+
+print(findLocation("Pray for 38 bean way #Mexico", ["#Mexico"]))
