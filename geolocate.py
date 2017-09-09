@@ -5,6 +5,7 @@ import nltk
 def geolocate(location):
     if location is None:
         return
+    print(location)
     location_words = nltk.word_tokenize(location)
     API_KEY = 'AIzaSyA6R-TFHRYb2jh2gpJF6vfnSr3uZZlxzEs'
     request_url = "https://maps.googleapis.com/maps/api/geocode/json?address="

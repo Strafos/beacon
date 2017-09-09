@@ -17,7 +17,7 @@ def findLocationFlag(convertedJson):
                 sal = entity["salience"]
     if not haslocation or sal <= .1:
         return None
-    print(loc)
+    # print(loc)
     return loc
 
 def findInList(word_list, target):
@@ -80,5 +80,3 @@ def find_Loc(analyzed_tweet, original_tweet):
         return findLocation(tweet,locationFlag)
     else:
         return None
-
-print(findLocation("Pray for 38 bean way \'La Villa Blanca, \' ", "La Villa Blanca"))
