@@ -1,6 +1,7 @@
 import json
 import re
 import states
+from entry import Entry
 
 #index is the index of the word of the location
 
@@ -31,7 +32,7 @@ def findInList(word_list, target):
 
     return index
 
-def findLocation(body, locationFlag):
+def findLocation(body: object, locationFlag: object) -> object:
 
     body_split = re.split(r'[\'";,\s]\s*', body)
 
