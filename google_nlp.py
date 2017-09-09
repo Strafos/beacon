@@ -4,6 +4,7 @@ import argparse
 import json
 import sys
 import nlp
+import states
 
 def analyze_entities(text, encoding='UTF32'):
     body = {
@@ -34,6 +35,3 @@ for line in file.readlines():
     result = analyze_entities(line, get_native_encoding_type())
     analyzed_tweet = json.dumps(result, indent=2)
     nlp.find_Loc(analyzed_tweet, line)
-    
-
-
