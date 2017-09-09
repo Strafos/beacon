@@ -21,3 +21,4 @@ def geolocate(location):
     lat = (jsond["results"][0]["geometry"]["location"]["lat"])
     lng = (jsond["results"][0]["geometry"]["location"]["lng"])
     print(('{0}, {1}').format(lat, lng))
+    return [lat, lng]

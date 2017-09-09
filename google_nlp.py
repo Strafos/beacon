@@ -5,6 +5,7 @@ import argparse
 import json
 import sys
 import nlp
+from entry import Entry
 import states
 
 def analyze_entities(text, encoding='UTF32'):
@@ -37,4 +38,6 @@ for line in file.readlines():
     analyzed_tweet = json.dumps(result, indent=2)
     # print(analyzed_tweet)
     # print(line)
-    geolocate(nlp.find_Loc(analyzed_tweet, line))
+    address = nlp.find_Loc(analyzed_tweet, line)
+    coordinates = geolocate(nlp.find_Loc(analyzed_tweet, line))
+    new_entry = Entry(coordinates[0], coordinates[1], address)
