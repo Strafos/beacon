@@ -13,14 +13,14 @@ def findLocationFlag(convertedJson):
                 sal = entity["salience"]
     return loc
 
-def findInList(list, target):
-    print(list)
+def findInList(word_list, target):
+    print(word_list)
     print(target)
-    index = list.index(target[0])
+    index = word_list.index(target[0])
     length = len(target)
 
     for t in target:
-        if not t in list[index:index + length]:
+        if not t in word_list[index:index + length]:
             return -1
 
     return index
@@ -48,15 +48,19 @@ def findLocation(body, locationFlag):
 
     return " ".join(words[cursor:index + len(locationFlag.split())])
 
-convertedJson = dict()
-with open("info.json") as f:
-    convertedJson = json.load(f)
+def find_Loc(analyzed_tweet, original_tweet):
+    convertedJson = dict()
+    # with open("info.json") as f:
+    #     convertedJson = json.load(f)
+    convertedJson = json.loads(analyzed_tweet)
+    # convertedJson = json
 
-locationFlag = findLocationFlag(convertedJson)
 
-tweet = "Water rising quick please help ASAP please!!\n820 smith street, port Arthur Texas,77640"
-print("tweet: \n\t" + tweet)
-print()
-print("determined location: \n\t" + findLocation(tweet, locationFlag))
-#now words[index] is a number, the 45 in 45 oak avenue mercer county
+    locationFlag = findLocationFlag(convertedJson)
 
+    tweet = original_tweet
+    # tweet = "Water rising quick please help ASAP please!!\n820 smith street, port Arthur Texas,77640"
+    print("tweet: \n\t" + tweet)
+    print()
+    print("determined location: \n\t" + findLocation(tweet, locationFlag))
+    #now words[index] is a number, the 45 in 45 oak avenue mercer county
