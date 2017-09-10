@@ -9,8 +9,7 @@ from constants import *
 import json
 import time
 import info
-
-tweets = open('tweets3.txt', 'w')
+import google_nlp
 
 class StdOutListener(StreamListener):
     """ A listener handles tweets that are received from the stream.
@@ -31,21 +30,8 @@ class StdOutListener(StreamListener):
             idx = data.index(':') + 1
         if tweet not in self.stored_tweets and any(num in tweet for num in info.nums):
             if any(kw in tweet for kw in info.help_words):
-                print(tweet)
-                tweets.write(tweet + '\n')
                 self.stored_tweets.append(tweet)
-        # if tweet not in self.stored_tweets.values():
-        #     for num in info.nums:
-        #         if num in tweet:
-        #             for kw in info.help_words:
-        #                 if kw in tweet:
-        #                     self.stored_tweets[tweet[:5]] = tweet
-        #                     print(tweet)
-        #                     # print(h)
-        #                     # print(self.hashed_tweets)
-        #                     # print(data)
-        #                     tweets.write(tweet)
-        #                     return True
+                google_nlp.enter_coord(tweet)
         return True
 
     def on_error(self, status):

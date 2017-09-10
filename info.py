@@ -65,7 +65,17 @@ states = [
     'RedCross',
     'refuge',
     'location',
+    'islands',
+    'Fla',
+    'homes',
+    'houses',
+    'nation',
+    'SC', 'ID', 'PR', 'AL', 'MA', 'MI', 'TX', 'DC', 'WV', 'CT', 'GA', 'SD', 'KS', 'DE', 'NC', 'HI', 'MP', 'OK', 'VI', 'OR', 'VT', 'WY', 'MN', 'IN', 'MD', 'NA', 'AK', 'LA', 'FL', 'PA', 'AS', 'RI', 'CA', 'ME', 'WA', 'VA', 'AR', 'NJ', 'NM', 'AZ', 'KY', 'NY', 'OH', 'IL', 'MS', 'MO', 'MT', 'TN', 'WI', 'IA', 'NV', 'ND', 'NH', 'CO', 'UT', 'GU',
+    'NE',
     ]
+
+
+
 
 nums = list(str(range(10)))
 

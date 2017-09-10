@@ -21,8 +21,8 @@ def findLocationFlag(convertedJson):
     return loc
 
 def findInList(word_list, target):
-    # print(word_list)
-    # print(target)
+    print(word_list)
+    print(target)
     index = word_list.index(target[0])
     length = len(target)
 
@@ -32,7 +32,7 @@ def findInList(word_list, target):
 
     return index
 
-def findLocation(body: object, locationFlag: object) -> object:
+def findLocation(body, locationFlag):
 
     body_split = re.split(r'[\'";,\s]\s*', body)
 

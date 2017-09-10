@@ -31,14 +31,9 @@ def get_native_encoding_type():
     else:
         return 'UTF32'
 
-file = open('tweets3.txt', 'r')
-
-c = 0
-for line in file.readlines():
+def enter_coord(line):
     result = analyze_entities(line, get_native_encoding_type())
     analyzed_tweet = json.dumps(result, indent=2)
-    c = c + 1
-    print(c)
     # print(analyzed_tweet)
     # print(line)
     address = nlp.find_Loc(analyzed_tweet, line)
