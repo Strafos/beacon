@@ -41,11 +41,11 @@ def findLocation(body, locationFlag):
 
     for word in body_split:
         if word != "":
-            words.append(word.strip("#.!:()\"\\/…"))
+            words.append(word.strip("#.!:()*\"\\/…"))
 
     cleaned_location_flags = []
     for flag in locationFlag.split():
-        cleaned_location_flags.append(flag.strip("…#.!()'\"\\/"))
+        cleaned_location_flags.append(flag.strip("…#.*!()'\"\\/"))
 
     index = findInList(words, cleaned_location_flags)
 

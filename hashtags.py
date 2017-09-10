@@ -15,10 +15,9 @@ class StdOutListener(StreamListener):
     stored_tweets = []
     def on_data(self, data):
         a = json.loads(data)
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(a)
+        # pp = pprint.PrettyPrinter(indent=4)
+        # pp.pprint(a)
         tweet = a["text"]
-        print(a)
         print(tweet)
         # try: 
         #     tweet2 = a["full_text"]
@@ -34,7 +33,7 @@ class StdOutListener(StreamListener):
             # if any(kw in tweet for kw in info.help_words):
             self.stored_tweets.append(tweet)
             google_nlp.enter_coord(tweet)
-        return False
+        return True
 
     def on_error(self, status):
         print(status)
