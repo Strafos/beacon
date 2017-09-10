@@ -16,8 +16,6 @@ def geolocate(location):
     request_url = request_url + '&key=' + API_KEY
     r = requests.get(request_url)
     jsond = json.loads(r.text)
-    print('jsond: ')
-    print(jsond)
     if(len(jsond["results"]) is 0):
         return [0,0]
     lat = (jsond["results"][0]["geometry"]["location"]["lat"])

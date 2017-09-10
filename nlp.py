@@ -23,6 +23,7 @@ def findLocationFlag(convertedJson):
 def findInList(word_list, target):
     print(word_list)
     print(target)
+    # [for i in word_list if '...' is in i]
     index = word_list.index(target[0])
     length = len(target)
 
@@ -40,11 +41,11 @@ def findLocation(body, locationFlag):
 
     for word in body_split:
         if word != "":
-            words.append(word.strip("#.!"))
+            words.append(word.strip("#.!:()\"\\/…"))
 
     cleaned_location_flags = []
     for flag in locationFlag.split():
-        cleaned_location_flags.append(flag.strip("#!'\"\\/"))
+        cleaned_location_flags.append(flag.strip("…#.!()'\"\\/"))
 
     index = findInList(words, cleaned_location_flags)
 

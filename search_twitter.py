@@ -16,7 +16,7 @@ if (not api):
 
 # Continue with rest of code
 
-searchQuery = '#Irma'  # this is what we're searching for
+searchQuery = '#Harveyrescue'  # this is what we're searching for
 maxTweets = 10000000 # Some arbitrary large number
 tweetsPerQry = 100  # this is the max the API permits
 fName = 'tweets.txt' # We'll store the tweets in a text file.

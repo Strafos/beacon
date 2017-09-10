@@ -12,27 +12,29 @@ import info
 import google_nlp
 
 class StdOutListener(StreamListener):
-    """ A listener handles tweets that are received from the stream.
-    This is a basic listener that just prints received tweets to stdout.
-    """
-
     stored_tweets = []
     def on_data(self, data):
         a = json.loads(data)
-        # pp = pprint.PrettyPrinter(indent=4)
-        # pp.pprint(a)
-        try: 
-            tweet = a["text"]
-        except: 
-            return True
-        idx = 0
-        if 'RT @' in tweet:
-            idx = data.index(':') + 1
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(a)
+        tweet = a["text"]
+        print(a)
+        print(tweet)
+        # try: 
+        #     tweet2 = a["full_text"]
+        #     tweet = a["text"]
+        #     print(tweet)
+        # except: 
+        #     return True
+        # idx = 0
+        # print(a)
+        # if 'RT @' in tweet:
+        #     idx = data.index(':') + 1
         if tweet not in self.stored_tweets and any(num in tweet for num in info.nums):
-            if any(kw in tweet for kw in info.help_words):
-                self.stored_tweets.append(tweet)
-                google_nlp.enter_coord(tweet)
-        return True
+            # if any(kw in tweet for kw in info.help_words):
+            self.stored_tweets.append(tweet)
+            google_nlp.enter_coord(tweet)
+        return False
 
     def on_error(self, status):
         print(status)
@@ -43,4 +45,4 @@ if __name__ == '__main__':
     auth.set_access_token(access_token, access_token_secret)
 
     stream = Stream(auth, l)
-    stream.filter(track=['#Hurricaneirma', '#Irma', '#Irmarescue'])
+    stream.filter(track=['#Irmarelief', '#Irma', '#Irmarescue'])
