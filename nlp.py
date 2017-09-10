@@ -55,10 +55,8 @@ def findLocation(body, locationFlag):
 
     index = findInList(words, cleaned_location_flags)
 
-    if index >= len(body) or index < 0:
+    if index >= len(body) or index <= 0:
         return None
-    elif index == 0:
-        return words[index]
 
     cursor = index
     while cursor >= 0 and not words[cursor].isdigit():
