@@ -20,11 +20,17 @@ def findLocationFlag(convertedJson):
         return None
     return loc
 
+def getIndex(list, target):
+    for i in range(len(list)):
+        if target in list[i]:
+            return i
+    return -1
+
 def findInList(word_list, target):
     print(word_list)
     print(target)
     # [for i in word_list if '...' is in i]
-    index = word_list.index(target[0])
+    index = getIndex(list, target[0])
     length = len(target)
 
     for t in target:
