@@ -72,11 +72,17 @@ states = [
     'nation',
     'SC', 'ID', 'PR', 'AL', 'MA', 'MI', 'TX', 'DC', 'WV', 'CT', 'GA', 'SD', 'KS', 'DE', 'NC', 'HI', 'MP', 'OK', 'VI', 'OR', 'VT', 'WY', 'MN', 'IN', 'MD', 'NA', 'AK', 'LA', 'FL', 'PA', 'AS', 'RI', 'CA', 'ME', 'WA', 'VA', 'AR', 'NJ', 'NM', 'AZ', 'KY', 'NY', 'OH', 'IL', 'MS', 'MO', 'MT', 'TN', 'WI', 'IA', 'NV', 'ND', 'NH', 'CO', 'UT', 'GU',
     'NE',
-    'island'
-    'Bahamas'
-    'HurricaneIrma'
+    'island',
+    'Bahamas',
+    'HurricaneIrma',
+    'America',
+    'Keys',
+    'West',
+    'South',
+    'East',
+    'North'
     
     ]
 nums = list(str(range(10)))
 
-help_words = ['help','family','stuck','trapped',]
+help_words = ['help','family','stuck','trapped', 'Stuck', 'friend', 'Help', 'HELP', 'court', 'St', 'Dr', 'drive', 'Drive', 'street', 'Ct', 'Street', 'Drive']
