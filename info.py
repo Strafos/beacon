@@ -60,9 +60,13 @@ states = [
     'Wisconsin',
     'Wyoming',
     'house',
-    'home'
+    'home',
+    'UK',
+    'RedCross',
+    'refuge',
+    'location',
     ]
 
-nums = list(range(10))
+nums = list(str(range(10)))
 
-help_words = ['help','!','family','stuck','trapped',]
+help_words = ['help','family','stuck','trapped',]

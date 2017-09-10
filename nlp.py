@@ -1,6 +1,6 @@
 import json
 import re
-import states
+import info
 from entry import Entry
 
 #index is the index of the word of the location
@@ -10,7 +10,7 @@ def findLocationFlag(convertedJson):
     sal = 0
     haslocation = False
     for entity in convertedJson["entities"]:
-        if entity["type"] == "LOCATION" and entity["name"] not in states.states:
+        if entity["type"] == "LOCATION" and entity["name"] not in info.states:
             haslocation = True
             if entity["salience"] > sal:
                 loc = entity["name"]

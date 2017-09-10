@@ -6,7 +6,7 @@ import json
 import sys
 import nlp
 from entry import Entry
-import states
+import info
 
 def analyze_entities(text, encoding='UTF32'):
     body = {
@@ -31,13 +31,16 @@ def get_native_encoding_type():
     else:
         return 'UTF32'
 
-file = open('testtweet.txt', 'r')
+file = open('tweets3.txt', 'r')
 
+c = 0
 for line in file.readlines():
     result = analyze_entities(line, get_native_encoding_type())
     analyzed_tweet = json.dumps(result, indent=2)
-    print(analyzed_tweet)
-    print(line)
+    c = c + 1
+    print(c)
+    # print(analyzed_tweet)
+    # print(line)
     address = nlp.find_Loc(analyzed_tweet, line)
     coordinates = geolocate(nlp.find_Loc(analyzed_tweet, line))
     new_entry = None
