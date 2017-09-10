@@ -50,7 +50,7 @@ def findLocation(body, locationFlag):
     index = findInList(words, cleaned_location_flags)
 
     if index >= len(body) or index < 0:
-        return
+        return None
     elif index == 0:
         return words[index]
 
@@ -59,7 +59,7 @@ def findLocation(body, locationFlag):
         cursor -= 1
 
     if cursor < 0:
-        return locationFlag
+        return None
 
     return " ".join(words[cursor:index + len(cleaned_location_flags)])
 
