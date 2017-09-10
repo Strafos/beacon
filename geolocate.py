@@ -1,12 +1,21 @@
 import requests
 import json
 import nltk
+import info
 
+bias = True
+bias_loc = 'Pennsylvania'
 def geolocate(location):
     if location is None:
         return
     print(location)
     location_words = nltk.word_tokenize(location)
+    if bias:
+        for i in range(len(location_words)):
+            if location_words[i] in info.US_states:
+                location_words[i] = ''
+        location_words.append(bias_loc)
+        print(location_words) 
     API_KEY = 'AIzaSyA6R-TFHRYb2jh2gpJF6vfnSr3uZZlxzEs'
     request_url = "https://maps.googleapis.com/maps/api/geocode/json?address="
     for i in range(len(location_words)):
@@ -22,3 +31,5 @@ def geolocate(location):
     lng = (jsond["results"][0]["geometry"]["location"]["lng"])
     print(('{0}, {1}').format(lat, lng))
     return [lat, lng]
+
+geolocate('47 Chestnut')
