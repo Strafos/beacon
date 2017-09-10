@@ -16,10 +16,10 @@ if (not api):
 
 # Continue with rest of code
 
-searchQuery = '#Harveyrescue'  # this is what we're searching for
+searchQuery = '#Hurricaneharvey'  # this is what we're searching for
 maxTweets = 10000000 # Some arbitrary large number
 tweetsPerQry = 100  # this is the max the API permits
-fName = 'tweets.txt' # We'll store the tweets in a text file.
+fName = 'current_tweets.txt' # We'll store the tweets in a text file.
 
 
 # If results from a specific ID onwards are reqd, set since_id to that ID.
