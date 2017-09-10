@@ -80,9 +80,11 @@ states = [
     'West',
     'South',
     'East',
-    'North'
-    
+    'North',
+    'states',
     ]
 nums = list(str(range(10)))
 
-help_words = ['help','family','stuck','trapped', 'Stuck', 'friend', 'Help', 'HELP', 'court', 'St', 'Dr', 'drive', 'Drive', 'street', 'Ct', 'Street', 'Drive']
+help_words = ['help','family','stuck','trapped', 'Stuck', 'friend', 'Help', 'HELP', 'court', 'St', 'Dr', 'drive', 'Drive', 'street', 'Ct', 'Street', 'Drive', 
+    'danger', 'Avenue', 'avenue', 'AVENUE', 'ave', 'AVE', 'Ave', 'Road', 'Rd', 'st', 
+]

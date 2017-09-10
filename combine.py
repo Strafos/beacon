@@ -20,7 +20,6 @@ def filter1():
             if any(kw in tweet for kw in info.help_words):
                 g.write(tweet)
 
-filter1()
 def spaces():
     f = open('current.txt', 'r')
     g = open('all_tweets.txt', 'w')

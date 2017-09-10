@@ -39,8 +39,10 @@ def enter_coord(line):
     address = nlp.find_Loc(analyzed_tweet, line)
     coordinates = geolocate(nlp.find_Loc(analyzed_tweet, line))
     new_entry = None
-    if coordinates is not None:
-        total_loc = address + '\t' + str(coordinates[0]) + ', ' + str(coordinates[1]) + '\n'
+    if coordinates is not None :
+        if coordinates[0] is 0 and coordinates[1] is 0:
+            return
+        total_loc = address + '\t' + '\n(' + str(coordinates[0]) + ', ' + str(coordinates[1]) + ')\n'
         g.write(total_loc)
         new_entry = Entry(coordinates[0], coordinates[1], address)
 
